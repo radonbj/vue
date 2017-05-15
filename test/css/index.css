@@ -1,0 +1,398 @@
+@charset UTF-8;
+html,body {
+	background: #111;
+	font-family: "Microsoft YaHei", "Helvetica Neue", Arial, HelveticaNeue, Helvetica-Neue, Helvetica, "BBAlpha Sans", sans-serif;
+	font-size: 100px;
+	font-weight: 400;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0
+}
+
+.main{	
+	width: 100%;
+	height: auto;	
+	background: #fff;
+	margin: 0 auto;
+}
+
+.top{
+	display: flex;
+	background: url(http://m.qy.iwgame.com/images/v1/logo.png) rgba(255,255,255,.9) no-repeat center;
+	background-size: 1.52rem .88rem;
+	height: .88rem;
+	width: 100%;	
+	justify-content: flex-end;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;	
+	border-bottom: 1px solid #b59859;
+}
+.top .navigation{
+	width: .45rem;
+	height: .32rem;	
+	margin-right: .3rem;
+	background: url(http://m.qy.iwgame.com/images/v1/nav.png) no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.tt{
+	display: flex;
+	width: 100%;
+	height: 11.36rem;
+	background: url(http://m.qy.iwgame.com/images/v1/mian.jpg) no-repeat;
+	background-size: 100% auto;	
+	align-items: flex-end;
+}
+.tt a{
+	flex: 1 1 auto;	
+	height: 5.06rem;
+	background: url(http://www-res.iwgame.com/site9/2016/1025/20161025052945953.png) no-repeat;
+	background-size: 100% 100%;	
+}
+
+.new{
+	width: 5.8rem;
+	padding: 0 .3rem;
+	background: #fff;
+	border-bottom: .2rem solid #eeeff3;
+	overflow: hidden;
+}
+.new .newnav{
+	display: flex;
+	width: 5.84rem;
+	height: .66rem;
+	padding-top: .2rem;
+	padding-left: .04rem;
+	border-bottom: 1px solid #d8d8d8;
+}
+.new .newnav li{
+	width: .9rem;
+	height: .42rem;
+	font-size: .32rem;
+	line-height: .42rem;
+	text-align: center;
+	color: #3d3d3d;	
+}
+.new .newnav .cun{
+	color: #fff;
+	background: #b59859;
+	border-radius: .375rem;
+}
+.new .newlist{
+	display: flex;
+	width: 30.8rem;
+	height: 4.5rem;	
+	justify-content: space-between;
+	transition: transform 300ms;
+	-moz-transition: transform 300ms;
+	-webkit-transition: transform 300ms;
+	-o-transition: transform 300ms;	
+}
+.new .newlist .newly,.new .newlist .news,.new .newlist .activity,.new .newlist .notice,.new .newlist .forum{
+	width: 5.84rem;
+	height: 4.5rem;
+	font-size: .26rem;
+	line-height: .9rem;
+	color: #35373b;
+}
+.new .newlist .newly li,.new .newlist .news li,.new .newlist .activity li,.new .newlist .notice li,.new .newlist .forum li{
+	display: flex;
+	height: .88rem;
+	width: 100%;
+	justify-content: space-around;
+	border-bottom: 1px solid #d8d8d8;
+}
+.new .newlist a{
+	width: 15em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	color: #35373b;
+	text-decoration: none;
+}
+.new .newlist span{	
+	color: #999;
+}
+
+.new_icon{
+	display: flex;
+	justify-content: space-between;
+	width: 2.91rem;
+	height: .84rem;
+	margin: 0 auto;
+}
+.new_icon li{
+	flex: 1;
+	height: .35rem;
+	margin: .22rem 0 0 .23rem;
+	background: url(http://m.qy.iwgame.com/images/v1/new_icon.png) no-repeat;
+	background-size: 100% 100%;
+}
+.new_icon .cun{
+	background: url(http://m.qy.iwgame.com/images/v1/new_icon_h.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+
+
+
+.role{
+	width: 6.12rem;
+	padding-left: .28rem;
+	border-bottom: .2rem solid #eeeff3;	
+	overflow: hidden;
+}
+.role_nav{
+	display: flex;
+	width: 5.8rem;
+	height: .76rem;
+	border-bottom: 1px solid #d8d8d8;
+}
+.role_nav li{
+	flex: 0 1rem;
+	height: .76rem;
+	font-size: .28rem;
+	line-height: .76rem;
+	text-align: center;	
+	align-items: flex-end;
+}
+.role_nav .cun{
+	color: #b59859;
+}
+.role_nav .cun a{
+	display: flex;
+	height: .03rem;
+	flex: 1;
+	margin-top: -1px;
+	background: #b59859;
+}
+.role_list{
+	display: flex;
+	justify-content: flex-start;
+	width: 400%;
+	height: 4.84rem;
+	transition: transform 300ms;
+	-moz-transition: transform 300ms;
+	-webkit-transition: transform 300ms;
+	-o-transition: transform 300ms;	
+}
+.role_list > li{
+	width: 25%;
+	height: 4.84rem;
+	position: relative;
+	overflow: hidden;
+}
+.role_list .left{
+	height: 4.84rem;
+	/* transform: translate(6.4rem,0);
+	-webkit-transform: translate(6.4rem,0);
+	-moz-transform: translate(6.4rem,0);
+	-o-transform: translate(6.4rem,0); */
+}
+.role_list .right{
+	width: 3.63rem;
+	height: 3.93rem;
+	position: absolute;
+	top: -0.76rem;
+	right: -0.18rem;
+	background: url(http://m.qy.iwgame.com/images/v1/zys.png) no-repeat;
+	background-size: 100% 100%;
+	/* transform: translate(4rem,0);	
+	-webkit-transform: translate(4rem,0);
+	-moz-transform: translate(4rem,0);
+	-o-transform: translate(4rem,0); */
+}
+.role_list .right:nth-child(1){
+	background: url(http://m.qy.iwgame.com/images/v1/zys.png) no-repeat;
+	background-size: 100% 100%;
+}
+.role_list .img{
+	width: 2.31rem;
+	height: 3.1rem;	
+}
+.role_list .img:nth-child(1){
+	background: url(http://m.qy.iwgame.com/images/v1/zyt.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.role_list .occupation{
+	width: 6.1rem;
+	height: 1.6rem;
+	border-top: .02rem solid #e0e0e0;
+	margin-top: .1rem;	
+}
+.role_list .occupation p{
+	height: .3rem;
+	font-size: .22rem;
+	color: #3d3d3d;
+	padding: .05rem 0;
+}
+.role_list .occupation span{
+	font-size: .24rem;
+}
+.role_list .occupation p:nth-child(1){
+	height: .25rem;
+	width: 1.02rem;
+	margin-top: -.2rem;
+	font-size: .24rem;
+	color: #c8a666;
+	background: #fff;
+	padding: .05rem 0;	
+}
+.role_list .occupation p:nth-child(2){
+	height: .3rem;
+	font-size: .22rem;
+	color: #3d3d3d;
+	padding: .2rem 0 .2rem 0;
+	font-size: .24rem;
+}
+
+
+
+.atlas{
+	width: 5.8rem;
+	padding: 0 .3rem;
+	border-bottom: .2rem solid #eeeff3;	
+}
+.atlas_top{
+	display: flex;
+	height: .76rem;	
+	border-bottom: 1px solid #d8d8d8;
+}
+.atlas_top div{
+	height: .74rem;
+	width: 1.26rem;
+	line-height: .77rem;
+	text-align: center;
+	font-size: .28rem;
+	color: #b59859;
+	border-bottom: .03rem solid #b59859;
+}
+.atlas_top span{
+	font-size: .22rem;
+	color: #666;
+	margin-top: .22rem;
+	margin-left: auto;
+}
+.atlas_top span:after{
+	display: inline-flex;
+	content: '';
+	height: .19rem;
+	width: .21rem;
+	background: url(http://m.qy.iwgame.com/images/v1/rotate.png) no-repeat;
+	background-size: 100% 100%;
+}
+.atlas_list{
+	width: 6.1rem;
+	height: 4.2rem;
+	padding-bottom: .33rem;
+	transition: transform 2s;
+	-moz-transition: transform 2s;
+	-webkit-transition: transform 2s;
+	-o-transition: transform 2s;	
+	overflow: hidden;
+}
+.atlas_list ul{
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.atlas_list li{
+	width: 2.8rem;
+	height: 1.88rem;
+	margin: .33rem .2rem 0 0;
+}
+.atlas_list a{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	color: #3d3d3d;
+	text-decoration: none;
+}
+.atlas_list img{
+	width: 2.8rem;
+	height: 1.5rem;	
+}
+.atlas_list p{
+	height: .22rem;
+	width: 100%;
+	line-height: .22rem;
+	text-align: center;
+	font-size: .22rem;
+	color: #3d3d3d;	
+}
+
+.column{
+	width: 5.8rem;	
+	margin: auto;
+	overflow: hidden;
+}
+.column .column_nav{
+	width: 100%;
+	height: .76rem;
+}
+.column .column_nav ul{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+}
+.column .column_nav li{
+	width: 1.45rem;
+	height: .76rem;
+	line-height: .76rem;
+	text-align: center;
+	font-size: .28rem;
+	color: #3d3d3d;	
+}
+.column .column_nav .cun{
+	height: .74rem;
+	color: #b59859;
+	border-bottom:1px solid #b59859;
+}
+.column .column_lists{
+	width: 24.4rem;
+	margin-top: .2rem;
+	display: flex;
+	justify-content: flex-start;
+	transition: transform 300ms;
+	-moz-transition: transform 300ms;
+	-webkit-transition: transform 300ms;
+	-o-transition: transform 300ms;	
+}
+.column_lists .child{
+	width: 100%;
+}
+.column_lists .child_li,.column_lists .child_ul{
+	width: 100%;	
+}
+.column_lists .child_li li{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: .1rem 0;
+}
+.column_lists .child_li h4{
+	width: 100%;
+	line-height: .4rem;
+	font-weight: 600;
+	font-size: .22rem;
+	color: #3d3d3d;
+}
+.column_lists .child_li a{
+	display: flex;
+	height: .4rem;
+	padding: 0 .08rem;
+	margin: .06rem .14rem .06rem 0;
+	border: .01rem solid #e0e0e0;
+	font-size: .2rem;
+	text-decoration: none;
+	line-height: .4rem;
+	color: #3d3d3d;
+}

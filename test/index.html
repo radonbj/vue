@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="http://m.qy.iwgame.com/css/base.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script>
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth <= 320) {
+                    docEl.style.fontSize = '50px';
+                } else if (clientWidth >= 640 && clientWidth <= 640) {
+                    docEl.style.fontSize = '120px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="top">
+            <div class="navigation"></div>
+        </div>
+        <div class="tt">
+            <a></a>
+        </div>
+
+        <div class="new" id="new">
+            <ul class="newnav">
+                <li v-for="(nav,index) in navlist" :class="nav.class" @click="Move(index)">{{nav.name}}</li>
+            </ul>
+            <ul class="newlist" :style="total">
+            	<li class="newly">
+            		<ul>
+            			<li v-for="list in newly">
+            				<em>{{list.type}}</em>
+            				<a :href="list.href" target="_block">{{list.title}}</a>
+            				<span>{{list.time}}</span>
+            			</li>
+            		</ul>
+            	</li>
+            	<li class="news">
+            		<ul>
+            			<li v-for="list in news">
+            				<em>{{list.type}}</em>
+            				<a :href="list.href" target="_block">{{list.title}}</a>
+            				<span>{{list.time}}</span>
+            			</li>
+            		</ul>
+            	</li>
+            	<li class="activity">
+            		<ul>
+            			<li v-for="list in activity">
+            				<em>{{list.type}}</em>
+            				<a :href="list.href" target="_block">{{list.title}}</a>
+            				<span>{{list.time}}</span>
+            			</li>
+            		</ul>
+            	</li>
+            	<li class="notice">
+            		<ul>
+            			<li v-for="list in notice">
+            				<em>{{list.type}}</em>
+            				<a :href="list.href" target="_block">{{list.title}}</a>
+            				<span>{{list.time}}</span>
+            			</li>
+            		</ul>          		
+            	</li>
+            	<li class="forum">
+            		<ul>
+            			<li v-for="list in forum">
+            				<em>{{list.type}}</em>
+            				<a :href="list.href" target="_block">{{list.title}}</a>
+            				<span>{{list.time}}</span>
+            			</li>
+            		</ul>          		
+            	</li>
+            </ul>
+            <ul class="new_icon">
+            	<li class="cun"></li>
+            	<li></li>
+            	<li></li>
+            	<li></li>
+            	<li></li>
+            </ul>
+        </div>
+
+        <div class="role" id="role">
+        	<ul class="role_nav">
+        		<li v-for="(nav,index) in navs" :class="nav.class" @click="move(index)">{{nav.name}}<a></a></li>       		
+        	</ul>
+        	<ul class="role_list" :style="total">
+        		<li v-for="list in lists">
+        			<div class="left">
+        				<div class="img"></div>
+        				<div class="occupation">
+        					<p class="feature">{{list.feature}}</p>
+        					<p>{{list.synopsis}}</p>
+        					<p><span>{{list.type}}</span>{{list.type_m}}</p>
+        					<p><span>{{list.arms}}</span>{{list.arms_m}}</p>
+        				</div>
+        			</div>
+        			<div class="right"></div>
+        		</li>
+        	</ul>
+        </div>
+
+        <div class="atlas" id="atlas">
+        	<div class="atlas_top">
+        		<div>权御图集</div>
+        		<a></a>
+        		<span @click="move()">换一批</span>
+        	</div>
+        	<div class="atlas_list">
+        		<ul :style="total">
+        			<li v-for="list in lists">
+        				<a :href="list.src">
+        					<img :src="list.src" :alt="list.title" />
+        					<p>{{list.title}}</p>
+        				</a>
+        			</li>
+        		</ul>
+        	</div>
+        </div>
+
+        <div class="column" id="column">
+        	<div class="column_nav">
+        		<ul>
+        			<li v-for="(nav,index) in navs" :class="nav.class" @click="move(index)">{{nav.name}}</li>        			
+        		</ul>
+        	</div>
+        	<div class="column_lists" :style="total">
+        		<ul class="child">
+        			<li class="child_li">        	
+        				<ul class="child_ul">
+        					<li v-for="k in sprog">
+        						<h4>{{k.title}}</h4>
+        						<a v-for="s in k.li" :href="s.href">{{s.name}}</a>
+        					</li>
+        				</ul>	
+        			</li>
+        		</ul>
+        		<ul class="child">
+        			<li class="child_li">
+        				<ul class="child_ul">
+        					<li v-for="k in killer">
+        						<h4>{{k.title}}</h4>
+        						<a v-for="s in k.li" :href="s.href">{{s.name}}</a>
+        					</li>
+        				</ul>	
+        			</li>
+        		</ul>
+        		<ul class="child">
+        			<li class="child_li">        	
+        				<ul class="child_ul">
+        					<li v-for="k in feature">
+        						<h4>{{k.title}}</h4>
+        						<a v-for="s in k.li" :href="s.href">{{s.name}}</a>
+        					</li>
+        				</ul>	
+        			</li>
+        		</ul>
+        		<ul class="child">
+        			<li class="child_li">        	
+        				<ul class="child_ul">
+        					<li v-for="k in money">
+        						<h4>{{k.title}}</h4>
+        						<a v-for="s in k.li" :href="s.href">{{s.name}}</a>
+        					</li>
+        				</ul>	
+        			</li>
+        		</ul>
+        	</div>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>

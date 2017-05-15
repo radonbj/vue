@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<table>
+			<tr>
+				<td>序列号</td>
+				<td>名称</td>
+				<td>价格</td>
+				<td>数量</td>
+				<td>小计</td>
+				<td>操作</td>
+			</tr>
+			<tr v-for="(phone, index) in phones">
+				<td>{{index+1}}</td>
+				<td>{{phone.name}}</td>
+				<td>{{phone.price}}</td>
+				<td><input type="text" v-model="phone.count" /></td>
+				<td>{{phone.price*phone.count}}</td>
+				<td><button v-on:click="dele(index)">删除</button></td>
+			</tr>
+			<tr>
+				<td colspan="6">总价{{total}}</td>
+			</tr>
+		</table>
+		<div>
+			<div>
+				<label>手机名</label>
+				<input type="text" v-model="list.name" /> 
+			</div>
+			<div>
+				<label>价格</label>
+				<input type="text" v-model="list.price" /> 
+			</div>
+			<div>
+				<label>销量</label>
+				<input type="text" v-model="list.count" />
+			</div>
+			<button v-on:click="appendInfo">添加</button>
+		</div>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data:{
+				phones:[
+					{name:'三星',price:4000,count:1},
+					{name:'小米',price:5000,count:1},
+					{name:'华为',price:6000,count:1},
+					{name:'oppo',price:7000,count:1},
+					{name:'htc',price:8000,count:1},
+				],
+				list:{
+					name:'',
+					price:'',
+					count:''
+				}
+			},
+			methods:{
+				dele: function(index){
+					this.phones.splice(index,1);
+				},
+				appendInfo: function(){
+					this.phones.push({name:this.list.name,price:this.list.price,count:this.list.count});
+					this.list.count = '';
+					this.list.price = '';
+					this.list.name = '';
+				}				
+			},
+			computed:{
+				total: function(){
+					var sum = 0;
+					this.phones.forEach(function(item){
+						sum += item.price*item.count;					
+					});
+					return sum;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
